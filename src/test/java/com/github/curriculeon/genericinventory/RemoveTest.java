@@ -22,13 +22,8 @@ public class RemoveTest {
         // when
         genericInventory.remove(indexOfElement);
         actualItems = genericInventory.toArray(actualItems);
-        int j = 0;
-        for (int i = 0; i < actualItems.length; i++) {
-            if (i != indexOfElement) {
-                temp[j] = actualItems[j];
-                j++;
-            }
-        }
+
+        if (actualItems.length - 1 >= 0) System.arraycopy(actualItems, 0, temp, 0, actualItems.length - 1);
 
         // then
         Assert.assertArrayEquals(expectedItems, temp/*actualItems*/);
@@ -39,9 +34,6 @@ public class RemoveTest {
         String[] objectsToBeAdded = new String[]{"The", "Quicker", "Browner", "Foxer"};
         String[] expectedItems = new String[]{"Quicker", "Browner", "Foxer"};
         Integer indexToRemove = 0;
-
-
-
 
         test(expectedItems, objectsToBeAdded, indexToRemove);
     }
