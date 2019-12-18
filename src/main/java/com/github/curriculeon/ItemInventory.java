@@ -20,7 +20,7 @@ public class ItemInventory implements InventoryInterface<Item> {
     }
 
     @Override
-    public Item remove(int indexOfElement) {
+    public Item[] remove(int indexOfElement) {
         return null;
     }
 

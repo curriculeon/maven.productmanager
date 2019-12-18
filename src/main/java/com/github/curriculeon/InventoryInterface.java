@@ -7,7 +7,7 @@ public interface InventoryInterface<SomeType> {
 
     SomeType get(int indexOfElement);
 
-    SomeType remove(int indexOfElement);
+    SomeType[] remove(int indexOfElement);
 
     SomeType[] toArray(SomeType[] objectsToBeAdded);
 }

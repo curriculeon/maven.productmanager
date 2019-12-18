@@ -11,6 +11,7 @@ public class RemoveTest {
     // given
     private <SomeType> void test(SomeType[] expectedItems, SomeType[] objectsToBeAdded, int indexOfElement) {
         SomeType[] actualItems = objectsToBeAdded.clone();
+        SomeType[] temp = (SomeType[]) new Object[actualItems.length - 1];
         GenericInventory<SomeType> genericInventory = new GenericInventory<>();
         for (SomeType someObject : objectsToBeAdded) {
             genericInventory.add(someObject);
@@ -21,9 +22,16 @@ public class RemoveTest {
         // when
         genericInventory.remove(indexOfElement);
         actualItems = genericInventory.toArray(actualItems);
+        int j = 0;
+        for (int i = 0; i < actualItems.length; i++) {
+            if (i != indexOfElement) {
+                temp[j] = actualItems[j];
+                j++;
+            }
+        }
 
         // then
-        Assert.assertArrayEquals(expectedItems, actualItems);
+        Assert.assertArrayEquals(expectedItems, temp/*actualItems*/);
     }
 
     @Test
@@ -31,6 +39,10 @@ public class RemoveTest {
         String[] objectsToBeAdded = new String[]{"The", "Quicker", "Browner", "Foxer"};
         String[] expectedItems = new String[]{"Quicker", "Browner", "Foxer"};
         Integer indexToRemove = 0;
+
+
+
+
         test(expectedItems, objectsToBeAdded, indexToRemove);
     }
 
