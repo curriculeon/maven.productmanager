@@ -8,7 +8,8 @@ import org.junit.Test;
 /**
  * Created by leon on 12/16/2019.
  */
-public class GetTest {
+public class
+GetTest {
     // given
     private void test(Item[] objectsToBeAdded, Item expectedObject, int indexOfElement) {
         GenericInventory<Item> genericInventory = new GenericInventory<>();

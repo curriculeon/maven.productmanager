@@ -21,7 +21,7 @@ public class RemoveTest {
 
         // when
         genericInventory.remove(indexOfElement);
-        actualItems = genericInventory.toArray(actualItems);
+       // actualItems = genericInventory.toArray(actualItems);
 
         // then
         Assert.assertArrayEquals(expectedItems, actualItems);
