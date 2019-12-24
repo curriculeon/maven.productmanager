@@ -11,6 +11,7 @@ public class GetTest {
     // given
     private <SomeType> void test(SomeType[] objectsToBeAdded, SomeType expectedObject, int indexOfElement) {
         GenericInventory<SomeType> genericInventory = new GenericInventory<>();
+
         for(SomeType someObject : objectsToBeAdded) {
             genericInventory.add(someObject);
             Boolean itemHasBeenAdded = genericInventory.contains(someObject);

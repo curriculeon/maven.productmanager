@@ -1,6 +1,8 @@
 package com.github.curriculeon;
 
-public interface InventoryInterface<SomeType> {
+import java.util.Iterator;
+
+public interface InventoryInterface<SomeType> extends Iterable<SomeType> {
     void add(SomeType someObject);
 
     Boolean contains(SomeType someObject);
