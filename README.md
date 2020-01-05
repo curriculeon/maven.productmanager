@@ -9,6 +9,7 @@
 * Navigate to **your github profile** to find the _newly forked repository_.
 * Clone the repository from **your account** into your `~/dev` directory.
 * Open the newly cloned project in a code editor (Visual Studio Code, for example).
+* This `section` has been completed.
 
 ## Part 2 - Getting started
 * Ensure that each of the test classes passes with 100% success rate.
