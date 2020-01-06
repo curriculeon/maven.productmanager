@@ -1,5 +1,6 @@
 package com.github.curriculeon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,6 +8,14 @@ import java.util.List;
  */
 public class ItemInventory implements InventoryInterface<Item> {
     private List<Item> list;
+
+    public ItemInventory(){
+        this.list = new ArrayList<>();
+    }
+
+    public ItemInventory(List<Item> list){
+        this.list = list;
+    }
 
     @Override
     public void add(Item someObject) {
@@ -25,16 +34,16 @@ public class ItemInventory implements InventoryInterface<Item> {
 
     @Override
     public Item get(int indexOfElement) {
-        return null;
+        return list.get(indexOfElement);
     }
 
     @Override
     public Item remove(int indexOfElement) {
-        return null;
+        return list.remove(indexOfElement);
     }
 
     @Override
     public Item[] toArray(Item[] objectsToBeAdded) {
-        return new Item[0];
+        return list.toArray(objectsToBeAdded);
     }
 }

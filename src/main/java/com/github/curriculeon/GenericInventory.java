@@ -1,5 +1,6 @@
 package com.github.curriculeon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,6 +8,14 @@ import java.util.List;
  */
 public class GenericInventory<SomeType> implements InventoryInterface<SomeType> {
     private List<SomeType> list;
+
+    public GenericInventory(){
+        this.list = new ArrayList<>();
+    }
+
+    public GenericInventory(List<SomeType> list){
+        this.list = list;
+    }
 
     @Override
     public void add(SomeType someObject) {
@@ -25,16 +34,16 @@ public class GenericInventory<SomeType> implements InventoryInterface<SomeType> 
 
     @Override
     public SomeType get(int indexOfElement) {
-        return null;
+        return list.get(indexOfElement);
     }
 
     @Override
     public SomeType remove(int indexOfElement) {
-        return null;
+        return list.remove(indexOfElement);
     }
 
     @Override
     public SomeType[] toArray(SomeType[] objectsToBeAdded) {
-        return null;
+        return list.toArray(objectsToBeAdded);
     }
 }
