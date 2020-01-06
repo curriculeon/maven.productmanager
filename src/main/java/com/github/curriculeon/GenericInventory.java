@@ -1,17 +1,26 @@
 package com.github.curriculeon;
 
+import java.util.List;
+
 /**
  * Created by leon on 12/16/2019.
  */
 public class GenericInventory<SomeType> implements InventoryInterface<SomeType> {
+    private List<SomeType> list;
+
     @Override
     public void add(SomeType someObject) {
-
+        list.add(someObject);
     }
 
     @Override
     public Boolean contains(SomeType someObject) {
-        return null;
+        if (list.contains(someObject)){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
