@@ -1,12 +1,13 @@
 package com.github.curriculeon;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Created by leon on 12/16/2019.
  */
-public class GenericInventory<SomeType> implements InventoryInterface<SomeType> {
+public class GenericInventory<SomeType> implements InventoryInterface<SomeType>, Iterable<SomeType> {
     private List<SomeType> list;
 
     public GenericInventory(){
@@ -45,5 +46,10 @@ public class GenericInventory<SomeType> implements InventoryInterface<SomeType> 
     @Override
     public SomeType[] toArray(SomeType[] objectsToBeAdded) {
         return list.toArray(objectsToBeAdded);
+    }
+
+    @Override
+    public Iterator<SomeType> iterator(){
+        return list.iterator();
     }
 }
