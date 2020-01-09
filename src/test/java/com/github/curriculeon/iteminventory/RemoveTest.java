@@ -2,6 +2,7 @@ package com.github.curriculeon.iteminventory;
 
 import com.github.curriculeon.GenericInventory;
 import com.github.curriculeon.Item;
+import com.github.curriculeon.ItemInventory;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,16 +13,16 @@ public class RemoveTest {
     // given
     private void test(Item[] expectedItems, Item[] objectsToBeAdded, int indexOfElement) {
         Item[] actualItems = expectedItems.clone();
-        GenericInventory<Item> genericInventory = new GenericInventory<>();
+        ItemInventory inventory = new ItemInventory();
         for (Item someObject : objectsToBeAdded) {
-            genericInventory.add(someObject);
-            Boolean itemHasBeenAdded = genericInventory.contains(someObject);
+            inventory.add(someObject);
+            Boolean itemHasBeenAdded = inventory.contains(someObject);
             Assert.assertTrue(itemHasBeenAdded);
         }
 
         // when
-        genericInventory.remove(indexOfElement);
-        actualItems = genericInventory.toArray(actualItems);
+        inventory.remove(indexOfElement);
+        actualItems = inventory.toArray(actualItems);
 
         // then
         Assert.assertArrayEquals(expectedItems, actualItems);
