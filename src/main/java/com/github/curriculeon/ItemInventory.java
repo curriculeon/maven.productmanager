@@ -3,7 +3,9 @@ package com.github.curriculeon;
 /**
  * Created by leon on 12/16/2019.
  */
-public class ItemInventory implements InventoryInterface<Item> {
+public class ItemInventory extends GenericInventory<Item> {
+
+    /*
     @Override
     public void add(Item someObject) {
 
@@ -28,4 +30,5 @@ public class ItemInventory implements InventoryInterface<Item> {
     public Item[] toArray(Item[] objectsToBeAdded) {
         return new Item[0];
     }
+    */
 }
